@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div id="app">
+    <button v-on:click="getData">get user</button>
+    <div>
+      {{ users }}
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        users: []
+      },
+      methods: {
+        getData: function () {
+          const vm = this
+          axios.get('https://jsonplaceholder.typicode.com/users/')
+            .then(function (res) {
+              vm.users = res.data
+            })
+            .catch(function (err) {
+              console.log(err)
+            })
+        }
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  {{ num }}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      num: 10
+    },
+    // 단순히 값을 리턴하는 경우라면 computed 가 베스트 => computed 는 캐싱을 한다.
+    computed: {
+      doubleNum: function () {
+        return this.num * 2
+      }
+    },
+    methods: {
+      fetchUserByNumber: function (num) {
+        console.log(num)
+        // axios.get(num)
+      }
+    },
+    // 특정한 로직을 실행하기 위함이라면 watch => 애초에 그런 로직은 computed 에서 안 된다.
+    watch: {
+      num: function (newValue, oldValue) {
+        this.fetchUserByNumber(newValue)
+      }
+    }
+  })
+</script>
+
+</body>
+</html>
