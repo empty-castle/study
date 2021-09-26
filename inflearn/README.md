@@ -1,6 +1,7 @@
 # inflearn
 [인프런(inflearn)](https://www.inflearn.com/)에서 들은 강의를 커밋하는 곳입니다.
 
+---
 ## restful-web-service
 :closed_book: [Spring Boot를 이용한 RESTful Web Services 개발](https://www.inflearn.com/course/spring-boot-restful-web-services/dashboard)
 

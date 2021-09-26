@@ -1,10 +1,8 @@
-# Study
-## WEBPACK
-#### [step.01] webpack
-#### [step.02] webpack-react
-#### [step.03] node-react-webpack
+# React
 
-## following-[velopert](https://velopert.com/)
-#### simplereact
-#### todo-list
-#### phone-book
+---
+## [velopert](https://velopert.com/) 프로젝트 따라하기
+
+### 1. simplereact
+### 2. todo-list
+### 3. phone-book
