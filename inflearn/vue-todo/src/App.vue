@@ -25,12 +25,12 @@ import TodoFooter from "@/components/TodoFooter";
 export default {
   name: 'App',
   components: { TodoHeader, TodoInput, TodoList, TodoFooter },
-  data() {
-    return {
-      todoItems: []
-    }
-  },
-  methods: {
+  // data() {
+  //   return {
+  //     todoItems: []
+  //   }
+  // },
+  // methods: {
     // addOneItem(newTodoItem) {
     //   const obj = {
     //     completed: false,
@@ -52,7 +52,7 @@ export default {
     //   localStorage.clear()
     //   this.todoItems = []
     // }
-  },
+  // },
   // created() {
   //   if (localStorage.length > 0) {
   //     for (let i = 0; i < localStorage.length; i++) {

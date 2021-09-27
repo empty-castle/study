@@ -5,7 +5,7 @@
 <!--          v-bind:key="todoItem.item"-->
 <!--          class="shadow"-->
 <!--      >-->
-      <li v-for="(todoItem, index) in this.$store.state.todoItems"
+      <li v-for="(todoItem, index) in this.storedTodoItems"
           v-bind:key="todoItem.item"
           class="shadow"
       >
@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: "TodoList",
   // props: ['todoItems'],
@@ -37,6 +39,12 @@ export default {
     toggleComplete(todoItem, index) {
       // this.$emit('toggleItem', todoItem, index)
       this.$store.commit('toggleOneItem', { todoItem, index })
+    },
+    computed: {
+      // todoItems() {
+      //   return this.$store.getters.storedTodoItems
+      // },
+      ...mapGetters(['storedTodoItems'])
     }
   },
 }
