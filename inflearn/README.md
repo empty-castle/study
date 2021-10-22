@@ -15,3 +15,8 @@
 :closed_book: [Vue.js 중급 강좌 - 웹앱 제작으로 배워보는 Vue.js, ES6, Vuex](https://www.inflearn.com/course/vue-pwa-vue-js-%EC%A4%91%EA%B8%89/dashboard)
 
 :writing_hand: [장기효(캡틴판교)](https://www.inflearn.com/users/@captain)
+
+## LearnWebpack
+:closed_book: [프론트엔드 개발자를 위한 웹팩](https://www.inflearn.com/course/%ED%94%84%EB%9F%B0%ED%8A%B8%EC%97%94%EB%93%9C-%EC%9B%B9%ED%8C%A9/dashboard)
+
+:writing_hand: [장기효(캡틴판교)](https://www.inflearn.com/users/@captain)
