@@ -1,14 +1,12 @@
 <template>
   <div>
-    <div v-for="jobs in jobsList" :key="jobs.id">
+    <div v-for="jobs in this.$store.state.jobs" :key="jobs.id">
       {{ jobs.title }}
     </div>
   </div>
 </template>
 
 <script>
-import { fetchJobsList } from '../api/index'
-
 export default {
   name: 'JobsView',
   data() {
@@ -17,9 +15,7 @@ export default {
     }
   },
   created() {
-    fetchJobsList()
-      .then(res => this.jobsList = res.data)
-      .catch(err => console.log(err))
+    this.$store.dispatch('FETCH_JOBS')
   }
 }
 </script>

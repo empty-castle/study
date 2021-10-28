@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div :key="news.id" v-for="news in newsList">
+    <div :key="news.id" v-for="news in this.$store.state.news">
       <div>
         {{ news.title }}
       </div>
@@ -9,19 +9,14 @@
 </template>
 
 <script>
-import { fetchNewsList } from '../api/index'
-
 export default {
   name: 'NewsView',
   data() {
     return  {
-      newsList: []
     }
   },
   created() {
-    fetchNewsList()
-      .then(res => this.newsList =  res.data)
-      .catch(err => console.log(err))
+    this.$store.dispatch('FETCH_NEWS')
   }
 }
 </script>
