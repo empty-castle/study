@@ -1,24 +1,24 @@
 <template>
   <div>
-    <div :key="news.id" v-for="news in this.$store.state.news">
-      <div>
-        {{ news.title }}
-      </div>
-    </div>
+    <p :key="item.id" v-for="item in fetchedNews">
+      <a :href="item.url">{{ item.title }}</a>
+      <small>{{ item.time_ago }} by {{ item.domain }}</small>
+    </p>
   </div>
 </template>
 
 <script>
+import {mapGetters} from 'vuex';
+
 export default {
   name: 'NewsView',
-  data() {
-    return  {
-    }
+  computed: {
+    ...mapGetters(['fetchedNews'])
   },
   created() {
-    this.$store.dispatch('FETCH_NEWS')
+    this.$store.dispatch('FETCH_NEWS');
   }
-}
+};
 </script>
 
 <style scoped>
