@@ -7,13 +7,11 @@ import ListItem from '@/components/ListItem';
 import Bus from '@/utils/bus';
 
 export default {
-  name: 'JobsView',
-  components: {
-    ListItem
-  },
+  name: 'AskView',
+  components: {ListItem},
   created() {
     Bus.$emit('start:spinner')
-    this.$store.dispatch('FETCH_JOBS')
+    this.$store.dispatch('FETCH_ASK')
       .then(() => {
         Bus.$emit('end:spinner')
       })

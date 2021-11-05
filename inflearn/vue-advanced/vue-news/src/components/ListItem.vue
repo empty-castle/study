@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="news-list">
-      <li :key="item.id" v-for="item in listItems" class="post">
+      <li :key="item.id" v-for="item in fetchedList" class="post">
         <div class="points">
           {{ item.points || 0 }}
         </div>
@@ -34,38 +34,23 @@
 </template>
 
 <script>
-// import {mapGetters} from 'vuex';
+import {mapGetters} from 'vuex';
 
 export default {
   name: 'ListItem',
   computed: {
-    // ...mapGetters(['fetchedJobs', 'fetchedNews', 'fetchedAsk']),
-    listItems() {
-      switch (this.$route.name) {
-        case 'news':
-          return this.$store.state.news;
-        case 'ask':
-          return this.$store.state.ask;
-        case 'jobs':
-          return this.$store.state.jobs;
-      }
-    }
+    ...mapGetters(['fetchedList']),
+    // listItems() {
+    //   switch (this.$route.name) {
+    //     case 'news':
+    //       return this.$store.state.news;
+    //     case 'ask':
+    //       return this.$store.state.ask;
+    //     case 'jobs':
+    //       return this.$store.state.jobs;
+    //   }
+    // }
   },
-  created() {
-    let actionName;
-    switch (this.$route.name) {
-      case 'news':
-      actionName = 'FETCH_NEWS';
-        break;
-      case 'ask':
-      actionName = 'FETCH_ASK';
-        break;
-      case 'jobs':
-      actionName = 'FETCH_JOBS';
-        break;
-    }
-    this.$store.dispatch(actionName);
-  }
 };
 </script>
 
