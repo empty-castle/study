@@ -8,5 +8,5 @@ export default {
         Bus.$emit('end:spinner')
       })
       .catch(err => console.log(err))
-  }
+  },
 }

@@ -11,14 +11,17 @@ export default {
   components: {
     ListItem
   },
-  created() {
-    Bus.$emit('start:spinner')
-    this.$store.dispatch('FETCH_JOBS')
-      .then(() => {
-        Bus.$emit('end:spinner')
-      })
-      .catch(err => console.log(err))
+  mounted() {
+    Bus.$emit('end:spinner')
   }
+  // created() {
+  //   Bus.$emit('start:spinner')
+  //   this.$store.dispatch('FETCH_JOBS')
+  //     .then(() => {
+  //       Bus.$emit('end:spinner')
+  //     })
+  //     .catch(err => console.log(err))
+  // }
 };
 </script>
 
