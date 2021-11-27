@@ -1,13 +1,23 @@
 <template>
   <header>
 <!--    <h1>TODO it!</h1>-->
-    <h1>{{ this.$store.state.headerText }}</h1>
+    <h1>{{ this.headerText }}</h1>
   </header>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-  name: "TodoHeader"
+  name: "TodoHeader",
+  data() {
+    return {
+      headerText: 'ToDo it!'
+    }
+  },
+  methods: {
+    ...mapGetters(['getHeaderText'])
+  }
 }
 </script>
 
