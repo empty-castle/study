@@ -1,26 +1,28 @@
 <template>
-  <div>
-    <p :key="item.id" v-for="item in fetchedNews">
-      <a :href="item.url">{{ item.title }}</a>
-      <small>{{ item.time_ago }} by {{ item.domain }}</small>
-    </p>
-  </div>
+  <ListItem></ListItem>
 </template>
 
 <script>
-import {mapGetters} from 'vuex';
+import ListItem from '@/components/ListItem';
+import ListMixin from '@/mixins/ListMixin';
+// import Bus from '@/utils/bus';
 
 export default {
   name: 'NewsView',
-  computed: {
-    ...mapGetters(['fetchedNews'])
+  components: {
+    ListItem
   },
-  created() {
-    this.$store.dispatch('FETCH_NEWS');
-  }
+  mixins: [ListMixin]
+  // created() {
+  //   Bus.$emit('start:spinner')
+  //   this.$store.dispatch('FETCH_NEWS')
+  //     .then(() => {
+  //       Bus.$emit('end:spinner')
+  //     })
+  //     .catch(err => console.log(err))
+  // }
 };
 </script>
 
 <style scoped>
-
 </style>

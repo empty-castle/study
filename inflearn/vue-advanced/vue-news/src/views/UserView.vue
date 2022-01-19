@@ -1,19 +1,15 @@
 <template>
   <div>
-    <p>name : {{ fetchedUser.id }}</p>
-    <p>karma : {{ fetchedUser.karma }}</p>
-    <p>created : {{ fetchedUser.created }}</p>
+    <UserProfile></UserProfile>
   </div>
 </template>
 
 <script>
-import {mapGetters} from 'vuex';
+import UserProfile from '@/components/UserProfile';
 
 export default {
   name: 'UserView',
-  computed: {
-    ...mapGetters(['fetchedUser'])
-  },
+  components: {UserProfile},
   created() {
     const username = this.$route.params.id;
     this.$store.dispatch('FETCH_USER', username);
