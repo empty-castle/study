@@ -1,10 +1,10 @@
-package com.example.eureka;
+package com.emptycastle.youtube;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EurekaApplicationTests {
+class YoutubeApplicationTests {
 
     @Test
     void contextLoads() {
