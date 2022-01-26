@@ -32,9 +32,5 @@ public class steamingController {
                 .uri("http://localhost:8081/fetch")
                 .retrieve()
                 .bodyToMono(String.class);
-//        return webClient.post()
-//                .uri("http://localhost:8081/fetch")
-//                .retrieve()
-//                .bodyToMono(String.class);
     }
 }
