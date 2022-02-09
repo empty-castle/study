@@ -10,7 +10,7 @@ import java.util.Map;
 
 
 @RestController
-public class userController {
+public class UserController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 

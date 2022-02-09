@@ -13,7 +13,7 @@ import reactor.core.publisher.Mono;
 import java.util.Map;
 
 @RestController
-public class steamingController {
+public class SteamingController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -29,7 +29,8 @@ public class steamingController {
                 ))
                 .build()
                 .post()
-                .uri("http://localhost:8081/fetch")
+                .uri("http://localhost:80/fetch")
+//                .uri("http://localhost:8081/fetch")
                 .retrieve()
                 .bodyToMono(String.class);
     }
