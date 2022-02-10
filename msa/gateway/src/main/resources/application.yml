@@ -5,9 +5,15 @@ spring:
     gateway:
       routes:
         - id: test
+          uri: lb://USER
           predicates:
-            - Path=/fetch
-          uri: http://localhost:8081
+          - Path=/fetch
+          filters:
+          - name: CircuitBreaker
+            args:
+              name: slow
+#          metadata:
+#            response-timeout: 1000
 
 server:
   port: 80

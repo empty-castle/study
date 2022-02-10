@@ -15,8 +15,9 @@ public class UserController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @PostMapping("/fetch")
-    public String fetch(@RequestHeader Map<String, String> header) {
+    public String fetch(@RequestHeader Map<String, String> header) throws InterruptedException {
         logger.info("[USER] fetch");
+        Thread.sleep(1000);
         return "[USER] fetch";
     }
 }
