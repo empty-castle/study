@@ -1,0 +1,32 @@
+<idea-plugin>
+    <id>org.emptycastle.intellij-plugin</id>
+    <name>test</name>
+    <vendor email="leegosoo11@naver.com">emptycastle</vendor>
+
+    <description><![CDATA[
+    Enter short description for your plugin here
+    Enter short description for your plugin here
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <group id="top" text="_My Top Menu">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action id="sub" class="action.TopMenu" text="Top Sub Menu"/>
+        </group>
+        <action id="myEdit" class="action.MyEdit" text="myEdit">
+            <add-to-group group-id="EditMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift BACK_QUOTE"/>
+        </action>
+        <action id="myForm" class="action.MyForm">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift Z"/>
+        </action>
+    </actions>
+</idea-plugin>
