@@ -8,6 +8,6 @@ public class MyForm extends AnAction {
 
     @Override
     public void actionPerformed(AnActionEvent e) {
-        TestForm testForm = new TestForm();
+        new TestForm();
     }
 }

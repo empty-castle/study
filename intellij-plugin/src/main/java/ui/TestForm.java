@@ -3,7 +3,6 @@ package ui;
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionAdapter;
 
 public class TestForm {
     private JButton search;
@@ -24,5 +23,8 @@ public class TestForm {
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
+        JFrame jFrame = new JFrame();
+        jFrame.setContentPane(TestForm);
+
     }
 }
