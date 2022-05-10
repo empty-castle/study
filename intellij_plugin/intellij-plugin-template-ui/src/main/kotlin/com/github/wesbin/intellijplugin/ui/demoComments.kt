@@ -40,6 +40,7 @@ fun demoComments(): DialogPanel {
                 "Long comments can deny word wrapping by MAX_LINE_LENGTH_NO_WRAP<br>$longString",
                 maxLineLength = MAX_LINE_LENGTH_NO_WRAP
             )
+
         }
 
         row("Row6:") {

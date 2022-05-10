@@ -34,7 +34,8 @@ val DEMOS = arrayOf(
     ::demoGaps,
     ::demoGroups,
     ::demoAvailability,
-    ::demoTips
+    ::demoTips,
+    ::demoBinding
 )
 
 class UiTest : DumbAwareAction() {
