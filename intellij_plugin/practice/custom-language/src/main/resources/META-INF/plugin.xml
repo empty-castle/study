@@ -31,5 +31,8 @@
                 language="Simple"
                 extensions="simple"
         />
+        <lang.parserDefinition
+                language="Simple"
+                implementationClass="com.emptycastle.customlanguage.SimpleParserDefinition"/>
     </extensions>
 </idea-plugin>
