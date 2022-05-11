@@ -2,11 +2,10 @@ package com.emptycastle.customlanguage
 
 import com.intellij.lang.Language
 
-class SimpleLanguage: Language() {
+class SimpleLanguage private constructor(): Language("Simple") {
 
-    const val INSTANCE = SimpleLanguage()
-
-    private fun SimpleLanguage() {
-        super("Simple")
+    companion object {
+        @JvmField
+        val INSTANCE: SimpleLanguage = SimpleLanguage()
     }
 }
