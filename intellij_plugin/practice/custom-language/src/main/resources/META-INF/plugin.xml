@@ -25,14 +25,19 @@
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
         <fileType
-                name="Simple File"
-                implementationClass="com.emptycastle.customlanguage.SimpleFileType"
-                fileNames="INSTACE"
-                language="Simple"
-                extensions="simple"
+            name="Simple File"
+            implementationClass="com.emptycastle.customlanguage.SimpleFileType"
+            fileNames="INSTACE"
+            language="Simple"
+            extensions="simple"
         />
         <lang.parserDefinition
-                language="Simple"
-                implementationClass="com.emptycastle.customlanguage.SimpleParserDefinition"/>
+            language="Simple"
+            implementationClass="com.emptycastle.customlanguage.SimpleParserDefinition"
+        />
+        <lang.syntaxHighlighterFactory
+            language="Simple"
+            implementationClass="com.emptycastle.customlanguage.SimpleSyntaxHighlighterFactory"
+        />
     </extensions>
 </idea-plugin>
