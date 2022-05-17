@@ -7,11 +7,13 @@ import org.intellij.sdk.language.psi.SimpleTypes
 class SimplePsiImplUtil {
 
     companion object {
-        fun getKey(element: SimpleProperty) {
+        fun getKey(element: SimpleProperty): String? {
             val keyNode: ASTNode? = element.node.findChildByType(SimpleTypes.KEY)
-            if (keyNode != null) {
-                return keyNode.text.replace("\\\\ ", " ")
-            }
+            return keyNode?.text?.replace("\\\\ ", " ")
+        }
+        
+        fun getValue(element: SimpleProperty): String? {
+            return element.node.findChildByType(SimpleTypes.VALUE)?.text
         }
     }
 }
