@@ -1,12 +1,10 @@
 // This is a generated file. Not intended for manual editing.
-package org.intellij.sdk.language.psi;
+package com.emptycastle.customlanguage.psi;
 
-import com.emptycastle.customlanguage.psi.SimpleElementType;
-import com.emptycastle.customlanguage.psi.SimpleTokenType;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.PsiElement;
 import com.intellij.lang.ASTNode;
-import org.intellij.sdk.language.psi.impl.*;
+import com.emptycastle.customlanguage.psi.impl.*;
 
 public interface SimpleTypes {
 

@@ -1,20 +1,27 @@
 {
-  parserClass="org.intellij.sdk.language.parser.SimpleParser"
+  parserClass="com.emptycastle.customlanguage.parser.SimpleParser"
 
   extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
 
   psiClassPrefix="Simple"
   psiImplClassSuffix="Impl"
-  psiPackage="org.intellij.sdk.language.psi"
-  psiImplPackage="org.intellij.sdk.language.psi.impl"
+//  psiPackage="org.intellij.sdk.language.psi"
+  psiPackage="com.emptycastle.customlanguage.psi"
+//  psiImplPackage="org.intellij.sdk.language.psi.impl"
+  psiImplPackage="com.emptycastle.customlanguage.psi.impl"
 
-  elementTypeHolderClass="org.intellij.sdk.language.psi.SimpleTypes"
-  elementTypeClass="org.intellij.sdk.language.psi.SimpleElementType"
-  tokenTypeClass="org.intellij.sdk.language.psi.SimpleTokenType"
+  elementTypeHolderClass="com.emptycastle.customlanguage.psi.SimpleTypes"
+//  elementTypeClass="org.intellij.sdk.language.psi.SimpleElementType"
+  elementTypeClass="com.emptycastle.customlanguage.psi.SimpleElementType"
+//  tokenTypeClass="org.intellij.sdk.language.psi.SimpleTokenType"
+  tokenTypeClass="com.emptycastle.customlanguage.psi.SimpleTokenType"
+
+//  psiImplUtilClass="org.intellij.sdk.language.psi.impl.SimplePsiImplUtil"
+  psiImplUtilClass="com.emptycastle.customlanguage.psi.impl.SimplePsiImplUtil"
 }
 
 simpleFile ::= item_*
 
 private item_ ::= (property|COMMENT|CRLF)
 
-property ::= (KEY? SEPARATOR VALUE?) | KEY
+property ::= (KEY? SEPARATOR VALUE?) | KEY {methods=[getKey getValue]}

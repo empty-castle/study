@@ -1,6 +1,8 @@
 package com.emptycastle.customlanguage
 
+import com.emptycastle.customlanguage.parser.SimpleParser
 import com.emptycastle.customlanguage.psi.SimpleFile
+import com.emptycastle.customlanguage.psi.SimpleTypes
 import com.intellij.lang.ASTNode
 import com.intellij.lang.ParserDefinition
 import com.intellij.lang.PsiParser
@@ -12,8 +14,6 @@ import com.intellij.psi.PsiFile
 import com.intellij.psi.TokenType
 import com.intellij.psi.tree.IFileElementType
 import com.intellij.psi.tree.TokenSet
-import org.intellij.sdk.language.parser.SimpleParser
-import org.intellij.sdk.language.psi.SimpleTypes
 
 class SimpleParserDefinition: ParserDefinition {
 

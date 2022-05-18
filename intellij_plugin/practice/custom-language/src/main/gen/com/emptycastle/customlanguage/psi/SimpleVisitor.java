@@ -1,5 +1,5 @@
 // This is a generated file. Not intended for manual editing.
-package org.intellij.sdk.language.psi;
+package com.emptycastle.customlanguage.psi;
 
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElementVisitor;
