@@ -14,10 +14,10 @@ class SimpleSyntaxHighlighter: SyntaxHighlighterBase() {
 
     companion object {
         val SEPARATOR = createTextAttributesKey("SIMPLE_SEPARATOR", DefaultLanguageHighlighterColors.OPERATION_SIGN)
-        val KEY = createTextAttributesKey("SIMPLE_SEPARATOR", DefaultLanguageHighlighterColors.KEYWORD)
-        val VALUE = createTextAttributesKey("SIMPLE_SEPARATOR", DefaultLanguageHighlighterColors.STRING)
-        val COMMENT = createTextAttributesKey("SIMPLE_SEPARATOR", DefaultLanguageHighlighterColors.LINE_COMMENT)
-        val BAD_CHARACTER = createTextAttributesKey("SIMPLE_SEPARATOR", HighlighterColors.BAD_CHARACTER)
+        val KEY = createTextAttributesKey("SIMPLE_KEY", DefaultLanguageHighlighterColors.KEYWORD)
+        val VALUE = createTextAttributesKey("SIMPLE_VALUE", DefaultLanguageHighlighterColors.STRING)
+        val COMMENT = createTextAttributesKey("SIMPLE_COMMENT", DefaultLanguageHighlighterColors.LINE_COMMENT)
+        val BAD_CHARACTER = createTextAttributesKey("SIMPLE_CHARACTER", HighlighterColors.BAD_CHARACTER)
 
         private val BAD_CHAR_KEYS = arrayOf(BAD_CHARACTER)
         private val SEPARATOR_KEYS = arrayOf(SEPARATOR)

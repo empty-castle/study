@@ -44,5 +44,9 @@
             language="JAVA"
             implementationClass="com.emptycastle.customlanguage.SimpleAnnotator"
         />
+        <codeInsight.lineMarkerProvider
+            language="JAVA"
+            implementationClass="com.emptycastle.customlanguage.SimpleLineMarkerProvider"
+        />
     </extensions>
 </idea-plugin>

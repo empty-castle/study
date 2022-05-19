@@ -14,8 +14,8 @@ import com.intellij.psi.PsiLiteralValue
 class SimpleAnnotator: Annotator {
 
     companion object {
-        val SIMPLE_PREFIX_STR: String = "simple"
-        val SIMPLE_SEPARATOR_STR: String = ":"
+        const val SIMPLE_PREFIX_STR: String = "simple"
+        const val SIMPLE_SEPARATOR_STR: String = ":"
     }
 
     override fun annotate(element: PsiElement, holder: AnnotationHolder) {
