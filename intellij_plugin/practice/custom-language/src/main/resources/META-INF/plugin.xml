@@ -48,5 +48,9 @@
             language="JAVA"
             implementationClass="com.emptycastle.customlanguage.SimpleLineMarkerProvider"
         />
+        <completion.contributor
+            language="Simple"
+            implementationClass="com.emptycastle.customlanguage.SimpleCompletionContributor"
+        />
     </extensions>
 </idea-plugin>
