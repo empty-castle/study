@@ -5,18 +5,13 @@
 
   psiClassPrefix="Simple"
   psiImplClassSuffix="Impl"
-//  psiPackage="org.intellij.sdk.language.psi"
   psiPackage="com.emptycastle.customlanguage.psi"
-//  psiImplPackage="org.intellij.sdk.language.psi.impl"
   psiImplPackage="com.emptycastle.customlanguage.psi.impl"
 
   elementTypeHolderClass="com.emptycastle.customlanguage.psi.SimpleTypes"
-//  elementTypeClass="org.intellij.sdk.language.psi.SimpleElementType"
   elementTypeClass="com.emptycastle.customlanguage.psi.SimpleElementType"
-//  tokenTypeClass="org.intellij.sdk.language.psi.SimpleTokenType"
   tokenTypeClass="com.emptycastle.customlanguage.psi.SimpleTokenType"
 
-//  psiImplUtilClass="org.intellij.sdk.language.psi.impl.SimplePsiImplUtil"
   psiImplUtilClass="com.emptycastle.customlanguage.psi.impl.SimplePsiImplUtil"
 }
 
@@ -24,4 +19,8 @@ simpleFile ::= item_*
 
 private item_ ::= (property|COMMENT|CRLF)
 
-property ::= (KEY? SEPARATOR VALUE?) | KEY {methods=[getKey getValue]}
+property ::= (KEY? SEPARATOR VALUE?) | KEY {
+    mixin="com.emptycastle.customlanguage.psi.impl.SimpleNamedElementImpl"
+    implements="com.emptycastle.customlanguage.psi.SimpleNamedElement"
+    methods=[getKey getValue getName setName getNameIdentifier]
+}
