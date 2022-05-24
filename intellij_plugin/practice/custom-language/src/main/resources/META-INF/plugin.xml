@@ -52,5 +52,8 @@
             language="Simple"
             implementationClass="com.emptycastle.customlanguage.SimpleCompletionContributor"
         />
+        <psi.referenceContributor
+            implementation="com.emptycastle.customlanguage.SimpleReferenceContributor"
+        />
     </extensions>
 </idea-plugin>

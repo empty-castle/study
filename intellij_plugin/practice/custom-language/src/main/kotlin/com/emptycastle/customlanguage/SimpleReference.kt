@@ -23,8 +23,7 @@ class SimpleReference(element: PsiElement, textRange: TextRange): PsiReferenceBa
         for (property: SimpleProperty in properties) {
             results.add(PsiElementResolveResult(property))
         }
-        // fixme how?
-        return results.toArray(Array<ResolveResult>(results.size))
+        return results.toTypedArray()
     }
 
     override fun resolve(): PsiElement? {
