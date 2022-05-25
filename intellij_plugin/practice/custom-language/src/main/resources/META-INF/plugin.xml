@@ -55,5 +55,9 @@
         <psi.referenceContributor
             implementation="com.emptycastle.customlanguage.SimpleReferenceContributor"
         />
+        <lang.findUsagesProvider
+            language="Simple"
+            implementationClass="com.emptycastle.customlanguage.SimpleFindUsagesProvider"
+        />
     </extensions>
 </idea-plugin>
