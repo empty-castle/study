@@ -4,6 +4,7 @@ package com.emptycastle.customlanguage.psi;
 import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
+import com.intellij.navigation.ItemPresentation;
 
 public interface SimpleProperty extends SimpleNamedElement {
 
@@ -21,5 +22,8 @@ public interface SimpleProperty extends SimpleNamedElement {
 
   @Nullable
   PsiElement getNameIdentifier();
+
+  @NotNull
+  ItemPresentation getPresentation();
 
 }

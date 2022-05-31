@@ -10,7 +10,6 @@ import com.intellij.psi.PsiElementResolveResult
 import com.intellij.psi.PsiPolyVariantReference
 import com.intellij.psi.PsiReferenceBase
 import com.intellij.psi.ResolveResult
-import com.intellij.util.containers.toArray
 
 class SimpleReference(element: PsiElement, textRange: TextRange): PsiReferenceBase<PsiElement>(element, textRange), PsiPolyVariantReference {
 

@@ -63,5 +63,8 @@
             language="JAVA"
             implementationClass="com.emptycastle.customlanguage.SimpleFoldingBuilder"
         />
+        <gotoSymbolContributor
+            implementation="com.emptycastle.customlanguage.SimpleChooseByNameContributor"
+        />
     </extensions>
 </idea-plugin>
