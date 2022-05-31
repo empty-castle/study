@@ -59,5 +59,9 @@
             language="Simple"
             implementationClass="com.emptycastle.customlanguage.SimpleFindUsagesProvider"
         />
+        <lang.foldingBuilder
+            language="JAVA"
+            implementationClass="com.emptycastle.customlanguage.SimpleFoldingBuilder"
+        />
     </extensions>
 </idea-plugin>
