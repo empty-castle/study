@@ -7,6 +7,7 @@ import com.intellij.ide.navigationToolbar.StructureAwareNavBarModelExtension
 import com.intellij.lang.Language
 import javax.swing.Icon
 
+// 동작 안 한다. step 15
 class SimpleStructureAwareNavbar: StructureAwareNavBarModelExtension() {
 
     override val language: Language
