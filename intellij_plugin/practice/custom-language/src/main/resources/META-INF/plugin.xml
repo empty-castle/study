@@ -66,5 +66,9 @@
         <gotoSymbolContributor
             implementation="com.emptycastle.customlanguage.SimpleChooseByNameContributor"
         />
+        <lang.psiStructureViewFactory
+            language="Simple"
+            implementationClass="com.emptycastle.customlanguage.SimpleStructureViewFactory"
+        />
     </extensions>
 </idea-plugin>
