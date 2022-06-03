@@ -70,5 +70,8 @@
             language="Simple"
             implementationClass="com.emptycastle.customlanguage.SimpleStructureViewFactory"
         />
+        <navbar
+            implementation="com.emptycastle.customlanguage.SimpleStructureAwareNavbar"
+        />
     </extensions>
 </idea-plugin>
