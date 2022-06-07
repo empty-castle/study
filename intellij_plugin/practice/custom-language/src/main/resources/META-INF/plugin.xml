@@ -73,5 +73,9 @@
         <navbar
             implementation="com.emptycastle.customlanguage.SimpleStructureAwareNavbar"
         />
+        <lang.formatter
+            language="Simple"
+            implementationClass="com.emptycastle.customlanguage.SimpleFormattingModelBuilder"
+        />
     </extensions>
 </idea-plugin>
