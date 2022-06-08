@@ -77,5 +77,11 @@
             language="Simple"
             implementationClass="com.emptycastle.customlanguage.SimpleFormattingModelBuilder"
         />
+        <codeStyleSettingsProvider
+            implementation="com.emptycastle.customlanguage.SimpleCodeStyleSettingsProvider"
+        />
+        <langCodeStyleSettingsProvider
+            implementation="com.emptycastle.customlanguage.SimpleLanguageCodeStyleSettingsProvider"
+        />
     </extensions>
 </idea-plugin>
