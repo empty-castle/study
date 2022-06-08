@@ -83,5 +83,9 @@
         <langCodeStyleSettingsProvider
             implementation="com.emptycastle.customlanguage.SimpleLanguageCodeStyleSettingsProvider"
         />
+        <lang.commenter
+            language="Simple"
+            implementationClass="com.emptycastle.customlanguage.SimpleCommenter"
+        />
     </extensions>
 </idea-plugin>
