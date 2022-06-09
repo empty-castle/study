@@ -46,7 +46,7 @@ class SimpleAnnotator: Annotator {
             holder.newAnnotation(HighlightSeverity.ERROR, "Unresolved property")
                 .range(keyRange)
                 .highlightType(ProblemHighlightType.LIKE_UNKNOWN_SYMBOL)
-//                .withFix(new SimpleCreatePropertyQuickFix (key))
+                .withFix(SimpleCreatePropertyQuickFix(key))
                 .create()
         } else {
             holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
