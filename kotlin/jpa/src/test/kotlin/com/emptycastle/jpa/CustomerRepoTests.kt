@@ -15,6 +15,8 @@ class CustomerRepoTests @Autowired constructor(private val customerRepo: Custome
 
     @Test
     fun test() {
+
         Assertions.assertTrue(customerRepo.findAllBy().isNotEmpty())
+        Assertions.assertTrue(customerRepo.findAllByNameContainingAndAddress(null, null).isNotEmpty())
     }
 }
