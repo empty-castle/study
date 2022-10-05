@@ -2,7 +2,6 @@ package com.emptycastle.jpa.entity
 
 import lombok.Getter
 import lombok.Setter
-import lombok.ToString
 import java.math.BigDecimal
 import javax.persistence.*
 
