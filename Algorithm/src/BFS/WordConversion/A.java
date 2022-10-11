@@ -27,13 +27,6 @@ public class A {
                 "cog"
         };
 
-        String[] input2 = {
-                "hot",
-                "dot",
-                "dog",
-                "lot",
-                "log"
-        };
         String begin = "hit";
         String target = "cog";
 

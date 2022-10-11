@@ -4,7 +4,7 @@ class OpenChatRoom {
 
     private val userMap = HashMap<String, String>()
 
-    fun soution(record: Array<String>): Array<String> {
+    fun solution(record: Array<String>): Array<String> {
         val tempAnswer = mutableListOf<String>()
 
         val actRecord = mutableListOf<Pair<String, String>>()
@@ -40,7 +40,7 @@ class OpenChatRoom {
 }
 
 fun main() {
-    for (s in OpenChatRoom().soution(
+    for (s in OpenChatRoom().solution(
         arrayOf(
             "Enter uid1234 Muzi",
             "Enter uid4567 Prodo",
