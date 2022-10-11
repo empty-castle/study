@@ -2,3 +2,5 @@
 /**/node_modules/
 
 /**/out/*
+/algo-kotlin/.gradle/
+/algo-kotlin/build/
