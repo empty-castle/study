@@ -1,43 +1,32 @@
+// https://school.programmers.co.kr/learn/courses/30/lessons/64064
+
 class BadUser {
 
-    private lateinit var checkUserIds: Array<Boolean?>
-    private lateinit var checkBannedIds: Array<Boolean?>
-    private var cnt = 0
+    private lateinit var visitedUserIds: BooleanArray
+    private val result = mutableSetOf<String>()
 
     fun solution(user_id: Array<String>, banned_id: Array<String>): Int {
-        var answer = 0
-
-        checkUserIds = arrayOfNulls<Boolean>(user_id.size)
-        checkBannedIds = arrayOfNulls<Boolean>(banned_id.size)
-
-//        user_id.forEach { checkBannedId(it, banned_id) }
-
-//        checkBannedId()
-
-        return answer
+        visitedUserIds = BooleanArray(user_id.size)
+        checkBannedId(user_id, banned_id)
+        return result.size
     }
 
-    private fun checkBannedId(user_id: Array<String>, banned_id: Array<String>) {
+    private fun checkBannedId(user_id: Array<String>, banned_id: Array<String>, save: MutableList<String> = mutableListOf()) {
 
-        user_id.forEachIndexed { index, userId ->
-            banned_id.forEachIndexed { index, banId ->
-
-            }
+        if (save.size == banned_id.size) {
+            result.add(save.sorted().joinToString(""))
+            return
         }
 
-
-        /*
-        *
-        * targetId 랑 banned_id 랑 매칭
-        *   만약 성공하면 다음 targetId 가져와서 확인 안한 banned_id에 매칭
-        *   만약 실패하면 다음 targetId 가져와서 확인
-        *
-        * targetId랑 banned_id 모두 방문 했냐 안 했냐를 기준으로 체크 index 는 무조건 0 부터 끝까지 갈기면 된다.
-        *
-        * 끝까지 성공하면 cnt ++ 해서 마지막 cnt 가 결과값이 되는 걸로 하면 정답?
-        *
-        * */
-
+        user_id.forEachIndexed { index, userId ->
+            if (!visitedUserIds[index] && checkWord(userId, banned_id[save.size])) {
+                visitedUserIds[index] = true
+                val copySave = save.toMutableList()
+                copySave.add(userId)
+                checkBannedId(user_id, banned_id, copySave)
+                visitedUserIds[index] = false
+            }
+        }
     }
 
     private fun checkWord(userId: String, bannedId: String): Boolean {
@@ -60,7 +49,7 @@ class BadUser {
 fun main() {
 
     val userId = arrayOf<String>("frodo", "fradi", "crodo", "abc123", "frodoc")
-    val bannedId = arrayOf<String>("fr*d*", "abc1**")
+    val bannedId = arrayOf<String>("fr*d*", "*rodo", "******", "******")
 
     println(BadUser().solution(userId, bannedId))
 }
