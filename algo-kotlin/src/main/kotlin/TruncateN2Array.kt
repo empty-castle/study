@@ -5,7 +5,7 @@ class TruncateN2Array {
     fun solution(n: Int, left: Long, right: Long): IntArray {
         val answer = mutableListOf<Int>()
 
-        for (i in left .. right) {
+        for (i in left .. right) {""
             val row = (i / n).toInt()
             val col = (i % n).toInt()
             answer.add(if (row > col) row + 1 else col + 1)
