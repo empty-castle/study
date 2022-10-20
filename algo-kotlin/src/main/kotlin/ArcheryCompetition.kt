@@ -105,5 +105,5 @@ fun main() {
     val info = intArrayOf(
         1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0
     )
-    SkillCheckLevel2Test2().solution(n, info).forEach { print("|$it|") }
+    ArcheryCompetition().solution(n, info).forEach { print("|$it|") }
 }
