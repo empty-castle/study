@@ -4,6 +4,7 @@
 
 * sliding window
   * MakeTwoCueSumEqual.kt
+  * JewelryShopping.kt
 * HashMap
   * OpenChatRoom.kt
 * DFS
