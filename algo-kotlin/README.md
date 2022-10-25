@@ -18,3 +18,8 @@
   * ArcheryCompetition
 * 소수 판별
   * FindNumberDecimalsInKNumber
+* 이분 탐색
+  * CrossingSteppingBridge.kt
+* floyd-warshall
+  * SharedTaxiFare.kt
+* 
