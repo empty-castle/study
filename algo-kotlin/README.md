@@ -3,10 +3,10 @@
 ## INDEX
 
 * sliding window
-  * MakeTwoCueSumEqual.kt
-  * JewelryShopping.kt
+  * MakeTwoCueSumEqual
+  * JewelryShopping
 * HashMap
-  * OpenChatRoom.kt
+  * OpenChatRoom
 * DFS
   * SkillCheckLevel2Test2
   * MenuRenewal
@@ -19,10 +19,14 @@
 * 소수 판별
   * FindNumberDecimalsInKNumber
 * 이분 탐색
-  * CrossingSteppingBridge.kt
+  * CrossingSteppingBridge
 * floyd-warshall
-  * SharedTaxiFare.kt
+  * SharedTaxiFare
 * BFS + DP
-  * RaceTrackConstruction.kt
+  * RaceTrackConstruction
 * Rotate Matrix, 5중 for 문
-  * LockAndKey.kt
+  * LockAndKey
+* 1 for 문 케이스 탐색
+  * CutRollCake
+* 시간초과
+  * PoppingBalloon
