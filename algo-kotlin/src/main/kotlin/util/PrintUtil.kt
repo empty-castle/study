@@ -2,10 +2,20 @@ package util
 
 object PrintUtil {
 
-    fun array2Print(arr: Array<Array<Any>>) {
+    fun arrayIntArrayPrint(arr: Array<IntArray>) {
         for (anies in arr) {
             for (any in anies) {
                 print("|$any|")
+            }
+            println()
+        }
+        println()
+    }
+
+    fun arrayHashMapPrint(arr: Array<HashMap<Int, Int>>) {
+        arr.forEach { hashMap ->
+            hashMap.forEach { k, v ->
+                println("$k: $v")
             }
             println()
         }
