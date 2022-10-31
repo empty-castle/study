@@ -18,71 +18,16 @@ class WayFindingGame {
         val topLevel = tree.keys.last()
         val topLevelNode = tree[topLevel]!!.entries.first()
 
-        findWay(topLevel, topLevelNode.key, 0, 100000, topLevelNode.value)
+        /*
+        *
+        * TreeNode 만들기
+        *
+        * 주의점: 해당 줄에 없다해도 다음 줄에는 있을수 있음 마지막까지 노드 찾아야 함 X Y
+        *
+        * */
 
         return arrayOf(preOrderAnswer.toIntArray(), postOrderAnswer.toIntArray())
     }
-
-    private fun findWay(level: Int, x: Int, minX: Int, maxX: Int, value: Int) {
-        if (level < 0) {
-            preOrderAnswer.add(value)
-            postOrderAnswer.add(value)
-            return
-        }
-
-        val nextLevelNodes = tree[level - 1]
-        if (nextLevelNodes == null) {
-            findWay(level - 1, x, minX, maxX, value)
-            return
-        }
-
-        var leftKey = -1
-        var rightKey = -1
-        for (key in nextLevelNodes.keys) {
-            if (key in minX until x) {
-                leftKey = key
-            } else if (key in x + 1 .. maxX) {
-                rightKey = key
-            }
-        }
-            preOrderAnswer.add(value)
-        if (leftKey == -1) {
-            findWay(level - 1, x, minX, maxX, value)
-        } else {
-            findWay(level - 1, leftKey, 0, x, nextLevelNodes[leftKey]!!)
-            postOrderAnswer.add(value)
-        }
-        if (rightKey == -1) {
-            findWay(level - 1, x, minX, maxX, value)
-        } else {
-            findWay(level - 1, rightKey, x, maxX, nextLevelNodes[rightKey]!!)
-        }
-    }
-
-//    private fun findWay(level: Int, x: Int, minX: Int, maxX: Int, value: Int) {
-//        val nextLevelNodes = tree[level - 1]
-//        if (nextLevelNodes == null) {
-//            if (level == 0) {
-//                preOrderAnswer.add(value)
-//                postOrderAnswer.add(value)
-//                return
-//            }
-//            findWay(level - 1, x, minX, maxX, value)
-//            return
-//        }
-//
-//        preOrderAnswer.add(value)
-//        for (i in x - 1 downTo  minX + 1) {
-//            val nextValue = nextLevelNodes[i] ?: continue
-//            findWay(level - 1, i, 0, x, nextValue)
-//        }
-//
-//        for (i in x + 1 .. maxX) {
-//            val nextValue = nextLevelNodes[i] ?: continue
-//            findWay(level - 1, i, x, maxX, nextValue)
-//        }
-//        postOrderAnswer.add(value)
-//    }
 }
 
 fun main() {
