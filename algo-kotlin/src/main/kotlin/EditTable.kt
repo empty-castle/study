@@ -1,15 +1,8 @@
-import java.util.LinkedList
 import java.util.Stack
 
 // https://school.programmers.co.kr/learn/courses/30/lessons/81303
 
-/*
-*
-* Linked List 의 개념을 활용해서 풀어내자
-*
-* */
-
-class Node(value: Int, prev: Int, post: Int)
+class Node(val value: Int, var prev: Int?, var post: Int?)
 
 class EditTable {
 
@@ -21,58 +14,71 @@ class EditTable {
         var answer: StringBuilder = StringBuilder()
 
         cursor = k
-        for (i in 0 until n) {
-            table.add(i)
+
+        init(n)
+
+        cmd.forEach {
+            when (it[0]) {
+                'U' -> up(it.split(" ")[1].toInt())
+                'D' -> down(it.split(" ")[1].toInt())
+                'C' -> delete()
+                'Z' -> rollback()
+            }
         }
 
-//        cmd.forEach {
-//            when (it[0]) {
-//                'U' -> up(it.split(" ")[1].toInt())
-//                'D' -> down(it.split(" ")[1].toInt())
-//                'C' -> delete()
-//                'Z' -> rollback()
-//            }
-//        }
-//
-//        table.forEach {
-//            if (answer.length != it) {
-//                while (answer.length < it) {
-//                    answer.append("X")
-//                }
-//                answer.append("O")
-//            } else {
-//                answer.append("O")
-//            }
-//        }
+        val dictionary = deletedRow.associateWith { 0 }
+        for (i in 0 until n) {
+            if (dictionary.containsKey(i)) {
+                answer.append("X")
+                continue
+            }
+            answer.append("O")
+        }
 
         return answer.toString()
     }
 
+    private fun init(n: Int) {
+
+        table.add(Node(0, null, 1))
+        for (i in 1 until n - 1) {
+            table.add(Node(i, i - 1, i + 1))
+        }
+        table.add(Node(n - 1, n - 2, null))
+    }
+
     private fun up(x: Int) {
-        cursor -= x
+        var cnt = 0
+        while (cnt < x) {
+            cursor = table[cursor].prev!!
+            cnt++
+        }
     }
 
     private fun down(x: Int) {
-        cursor += x
+        var cnt = 0
+        while (cnt < x) {
+            cursor = table[cursor].post!!
+            cnt++
+        }
     }
 
     private fun delete() {
-        deletedRow.add(table.removeAt(cursor))
-        if (cursor == table.size) {
-            cursor = table.size - 1
+        val currentRow = table[cursor]
+        if (currentRow.prev != null) table[currentRow.prev!!].post = currentRow.post
+        if (currentRow.post != null) table[currentRow.post!!].prev = currentRow.prev
+        deletedRow.add(cursor)
+        if (currentRow.post != null) {
+            cursor = currentRow.post!!
+        } else {
+            up(1)
         }
     }
 
     private fun rollback() {
-        val index = deletedRow.pop()
-        if (index > table.size) {
-            table.add(index)
-        } else {
-            table.add(index, index)
-        }
-        if (index < cursor) {
-            cursor++
-        }
+        val rollbackNode = table[deletedRow.pop()]
+        if (rollbackNode.prev != null) table[rollbackNode.prev!!].post = rollbackNode.value
+        if (rollbackNode.post != null) table[rollbackNode.post!!].prev = rollbackNode.value
     }
 }
 
@@ -81,9 +87,10 @@ fun main() {
     val n = 8
     val k = 2
     val cmd = arrayOf(
+        "D 4", "C", "C", "C",
 //        "D 2", "C", "U 3", "C", "D 4", "C", "U 2", "Z", "Z"
 //        "D 2", "C", "U 3", "C", "D 4", "C", "U 2", "Z", "Z", "U 1", "C"
-        "C", "C", "C", "C", "Z"
+//        "C", "C", "C", "C", "Z"
     )
 
     println(EditTable().solution(n, k, cmd))
