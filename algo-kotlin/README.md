@@ -34,3 +34,5 @@
   * WayFindingGame
 * Linked List
   * EditTable
+* 구간합
+  * UndestroyedBuilding
