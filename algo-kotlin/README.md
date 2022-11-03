@@ -36,3 +36,5 @@
   * EditTable
 * 구간합
   * UndestroyedBuilding
+* Just IF
+  * ColumnBeamInstallation
