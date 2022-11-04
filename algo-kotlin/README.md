@@ -34,7 +34,7 @@
   * WayFindingGame
 * Linked List
   * EditTable
-* 구간합
+* 구간합(누적합)
   * UndestroyedBuilding
 * Just IF
   * ColumnBeamInstallation
