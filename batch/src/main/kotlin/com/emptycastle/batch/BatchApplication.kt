@@ -1,3 +1,4 @@
+
 package com.emptycastle.batch
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
