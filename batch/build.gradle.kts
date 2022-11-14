@@ -20,7 +20,10 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-quartz")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("com.oracle.database.jdbc:ojdbc8-production:21.6.0.0.1")
+    implementation("com.oracle.database.jdbc:ojdbc8-production:21.6.0.0.1") {
+        exclude(group = "com.oracle.database.ha", module = "simplefan")
+        exclude(group = "com.oracle.database.ha", module = "ons")
+    }
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
