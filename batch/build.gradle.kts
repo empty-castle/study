@@ -16,6 +16,8 @@ repositories {
 }
 
 dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.springframework.boot:spring-boot-starter-batch")
     implementation("org.springframework.boot:spring-boot-starter-quartz")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -25,6 +27,11 @@ dependencies {
         exclude(group = "com.oracle.database.ha", module = "ons")
     }
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
+//    implementation("org.springframework.ws:spring-oxm:1.5.10")
+    implementation("org.springframework:spring-oxm:5.3.23")
+    implementation("com.thoughtworks.xstream:xstream:1.4.19")
+
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
