@@ -32,6 +32,10 @@ dependencies {
     implementation("org.springframework:spring-oxm:5.3.23")
     implementation("com.thoughtworks.xstream:xstream:1.4.19")
 
+    implementation("org.apache.httpcomponents:httpclient:4.5.13")
+    implementation("org.json:json:20220924")
+
+
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
