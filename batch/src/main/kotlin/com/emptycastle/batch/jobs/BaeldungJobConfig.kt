@@ -35,12 +35,9 @@ class BaeldungJobConfig(
     val stepBuilderFactory: StepBuilderFactory,
 ) {
 
-//    @Value("/baeldung/input.csv")
-//    lateinit var inputCsv: Resource
-
     val inputCsv = PathResource("C:\\.repo\\study\\batch\\src\\main\\resources\\baeldung\\input.csv")
 
-    @Value("file:xml/output.xml")
+    @Value("file:batch/src/main/resources/baeldung/output.xml")
     lateinit var outputXml: Resource
 
     companion object {
@@ -66,7 +63,7 @@ class BaeldungJobConfig(
             .processor(processor)
             .writer(writer)
             .faultTolerant()
-            .skipLimit(2)
+            .skipLimit(3)
             .skip(MissingUsernameException::class.java)
             .skip(NegativeAmountException::class.java)
 //            .retryLimit(3)
