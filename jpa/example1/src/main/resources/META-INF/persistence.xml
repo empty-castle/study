@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+    <persistence-unit name="jpabook">
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+            <property name="javax.persistence.jdbc.user" value="ADMIN"/>
+            <property name="javax.persistence.jdbc.password" value="emptyCASTLE13"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@forwork_high?TNS_ADMIN=C:/.repo/Wallet_forWORK"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
+        </properties>
+    </persistence-unit>
+</persistence>
