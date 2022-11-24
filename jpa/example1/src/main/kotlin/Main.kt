@@ -1,4 +1,6 @@
-import javax.persistence.Persistence
+//import tutorial.PersistenceContext
+import tutorial.Detached
+
 
 fun main(args: Array<String>) {
     println("Hello World!")
@@ -7,20 +9,7 @@ fun main(args: Array<String>) {
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
     println("Program arguments: ${args.joinToString()}")
 
-    val emf = Persistence.createEntityManagerFactory("jpabook")
-    val em = emf.createEntityManager()
-    val tx = em.transaction
-
-    try {
-        tx.begin()
-
-        tx.commit()
-    } catch (e: Exception) {
-        tx.rollback()
-    } finally {
-        em.close()
-    }
-    emf.close()
-
-
+//    CRUD()
+//    PersistenceContext()
+    Detached().test()
 }
