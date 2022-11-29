@@ -1,5 +1,6 @@
 //import tutorial.PersistenceContext
 import tutorial.Detached
+import tutorial.GeneratedValue
 
 
 fun main(args: Array<String>) {
@@ -11,5 +12,6 @@ fun main(args: Array<String>) {
 
 //    CRUD()
 //    PersistenceContext()
-    Detached().test()
+//    Detached().test()
+    GeneratedValue().test()
 }
