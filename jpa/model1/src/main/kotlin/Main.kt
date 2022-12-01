@@ -1,4 +1,7 @@
+import entity.Item
 import entity.Member
+import entity.Order
+import entity.OrderItem
 import javax.persistence.EntityManager
 import javax.persistence.EntityManagerFactory
 import javax.persistence.EntityTransaction
@@ -17,9 +20,10 @@ fun main(args: Array<String>) {
 
     tx.begin()
 
-    em.persist(Member().apply {
-        id = 1
-    })
+    em.persist(Member())
+    em.persist(Order())
+    em.persist(OrderItem())
+    em.persist(Item())
 
     tx.commit()
     em.close()

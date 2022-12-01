@@ -9,7 +9,7 @@ import javax.persistence.Id
 class Member {
 
     @Id
-//    @GeneratedValue
+    @GeneratedValue
     @Column(name = "MEMBER_ID")
     var id: Long? = null
 
