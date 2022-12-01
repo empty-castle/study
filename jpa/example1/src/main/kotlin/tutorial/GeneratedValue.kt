@@ -1,10 +1,18 @@
 package tutorial
 
 import entity.Board
+import javax.persistence.EntityManager
+import javax.persistence.EntityManagerFactory
+import javax.persistence.EntityTransaction
+import javax.persistence.Persistence
 
-class GeneratedValue: Tutorial() {
+class GeneratedValue: Tutorial {
 
     override fun test() {
+
+        val emf: EntityManagerFactory = Persistence.createEntityManagerFactory("jpabook")
+        val em: EntityManager = emf.createEntityManager()
+        val tx: EntityTransaction = em.transaction
 
         val board = Board()
         em.persist(board)

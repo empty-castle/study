@@ -1,9 +1,19 @@
 package tutorial
 
 import entity.Member
+import javax.persistence.EntityManager
+import javax.persistence.EntityManagerFactory
+import javax.persistence.EntityTransaction
+import javax.persistence.Persistence
 
-class Detached: Tutorial() {
+class Detached: Tutorial {
+
+    private val emf: EntityManagerFactory = Persistence.createEntityManagerFactory("jpabook")
+    private val em: EntityManager = emf.createEntityManager()
+    val tx: EntityTransaction = em.transaction
+
     override fun test() {
+
 
         val member = createMember("memberA", "회원1")
         member.username = "회원명변경"
