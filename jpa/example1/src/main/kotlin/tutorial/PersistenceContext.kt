@@ -1,9 +1,18 @@
 package tutorial
 
 import entity.Member
+import javax.persistence.EntityManager
+import javax.persistence.EntityManagerFactory
+import javax.persistence.EntityTransaction
+import javax.persistence.Persistence
 
-class PersistenceContext: Tutorial() {
+class PersistenceContext: Tutorial {
     override fun test() {
+
+        val emf: EntityManagerFactory = Persistence.createEntityManagerFactory("jpabook")
+        val em: EntityManager = emf.createEntityManager()
+        val tx: EntityTransaction = em.transaction
+
         try {
             tx.begin()
 
