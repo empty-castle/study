@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+    <persistence-unit name="jpabook">
+        <class>entity.Member</class>
+        <class>entity.Board</class>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+            <property name="javax.persistence.jdbc.user" value="ADMIN"/>
+            <property name="javax.persistence.jdbc.password" value="emptyCASTLE13"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@forwork_high?TNS_ADMIN=C:/.repo/Wallet_forWORK"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
+<!--            스키마 자동 생성-->
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"/>
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
