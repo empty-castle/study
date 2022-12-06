@@ -1,4 +1,4 @@
-package entity
+package entity.manyToOne.oneWay
 
 import javax.persistence.Column
 import javax.persistence.Entity
@@ -15,7 +15,4 @@ class Team {
     var id: String? = null
 
     var name: String? = null
-
-    @OneToMany(mappedBy = "team")
-    var members: MutableList<Member> = mutableListOf()
 }
