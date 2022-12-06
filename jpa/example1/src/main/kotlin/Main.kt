@@ -1,5 +1,4 @@
 //import tutorial.PersistenceContext
-import tutorial.Detached
 import tutorial.GeneratedValue
 
 

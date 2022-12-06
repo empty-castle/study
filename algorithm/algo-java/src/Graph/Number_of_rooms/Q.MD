@@ -2,7 +2,7 @@
 
 원점(0,0)에서 시작해서 아래처럼 숫자가 적힌 방향으로 이동하며 선을 긋습니다.
 
-![description](./discription.png)
+![description](discription.png)
 
 ex) 1일때는 오른쪽 위로 이동
 
@@ -28,7 +28,7 @@ ex) 1일때는 오른쪽 위로 이동
 
 **입출력 예 설명**
 
-![IO](./IO.png)
+![IO](IO.png)
 
 - (0,0) 부터 시작해서 6(왼쪽) 으로 3번 이동합니다. 그 이후 주어진 arrows 를
   따라 그립니다.

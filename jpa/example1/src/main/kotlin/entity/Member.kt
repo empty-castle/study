@@ -1,6 +1,5 @@
 package entity
 
-import org.hibernate.annotations.DynamicUpdate
 import java.util.Date
 import javax.persistence.*
 

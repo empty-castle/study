@@ -4,7 +4,7 @@
 
 **설명**
 
-![warshall](./warshall.png)
+![warshall](warshall.png)
 
 위의 그래프(노드와 다른 노드로 가는 비용을 그려낸)를 이차원 배열의 형태로 바꾸면
 다음과 같습니다.

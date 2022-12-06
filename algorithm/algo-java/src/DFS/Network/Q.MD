@@ -30,13 +30,13 @@
 
 아래와 같이 2개의 네트워크가 있습니다.
 
-![Network1.png](./Network1.png)
+![Network1.png](Network1.png)
 
 예제 #2
 
 아래와 같이 1개의 네트워크가 있습니다.
 
-![Network2.png](./Network2.png)
+![Network2.png](Network2.png)
 
 ---
 
