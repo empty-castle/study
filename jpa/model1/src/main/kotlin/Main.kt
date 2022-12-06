@@ -20,10 +20,13 @@ fun main(args: Array<String>) {
 
     tx.begin()
 
-    em.persist(Member())
-    em.persist(Order())
-    em.persist(OrderItem())
-    em.persist(Item())
+    val order = em.find(Order::class.java, 4.toLong())
+    val member = order.member
+
+    println(member)
+
+    val orderItem = order.orderItems[0]
+    println(orderItem.item)
 
     tx.commit()
     em.close()
