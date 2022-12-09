@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
     <persistence-unit name="jpabook">
-        <class>entity.manyToOne.oneWay.Member</class>
-        <class>entity.manyToOne.oneWay.Team</class>
+        <!--<class>entity.manyToOne.oneWay.Member</class>-->
+        <!--<class>entity.manyToOne.oneWay.Team</class>-->
+        <!--<class>entity.manyToMany.oneWay.Member</class>-->
+        <!--<class>entity.manyToMany.oneWay.Product</class>-->
+        <class>entity.manyToMany.twoWay.Member</class>
+        <class>entity.manyToMany.twoWay.Product</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
             <property name="javax.persistence.jdbc.user" value="ADMIN"/>

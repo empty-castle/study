@@ -1,16 +1,10 @@
-import entity.manyToMany.oneWay.Product
-import entity.manyToMany.oneWay.Member
+import entity.manyToMany.twoWay.Member
+import entity.manyToMany.twoWay.Product
 import javax.persistence.EntityManager
 import javax.persistence.EntityManagerFactory
 import javax.persistence.Persistence
 
-fun main(args: Array<String>) {
-    println("Hello World!")
-
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
-
+fun main() {
     val emf: EntityManagerFactory = Persistence.createEntityManagerFactory("jpabook")
     val em = emf.createEntityManager()
     val tx = em.transaction
@@ -36,7 +30,7 @@ private fun save(em: EntityManager) {
     val member = Member().apply {
         id = "member1"
         username = "회원1"
-        products.add(productA)
+        addProduct(productA)
     }
     em.persist(member)
 }
