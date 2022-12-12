@@ -3,10 +3,21 @@
     <persistence-unit name="jpabook">
         <!--<class>entity.manyToOne.oneWay.Member</class>-->
         <!--<class>entity.manyToOne.oneWay.Team</class>-->
+
         <!--<class>entity.manyToMany.oneWay.Member</class>-->
         <!--<class>entity.manyToMany.oneWay.Product</class>-->
-        <class>entity.manyToMany.twoWay.Member</class>
-        <class>entity.manyToMany.twoWay.Product</class>
+
+        <!--<class>entity.manyToMany.twoWay.Member</class>-->
+        <!--<class>entity.manyToMany.twoWay.Product</class>-->
+
+        <!--<class>entity.manyToMany.complexTwoWay.Member</class>-->
+        <!--<class>entity.manyToMany.complexTwoWay.Product</class>-->
+        <!--<class>entity.manyToMany.complexTwoWay.MemberProduct</class>-->
+
+        <class>entity.manyToMany.anotherTwoWay.Member</class>
+        <class>entity.manyToMany.anotherTwoWay.Product</class>
+        <class>entity.manyToMany.anotherTwoWay.Order</class>
+
         <properties>
             <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
             <property name="javax.persistence.jdbc.user" value="ADMIN"/>

@@ -27,6 +27,14 @@ class Order {
     @OneToMany(mappedBy = "order")
     var orderItems: MutableList<OrderItem> = mutableListOf()
 
+    @OneToOne
+    @JoinColumn(name = "DELIVERY_ID")
+    var delivery: Delivery? = null
+        set(value) {
+            field = value
+            value?.order = this
+        }
+
     @Temporal(TemporalType.TIMESTAMP)
     var orderDate: Date? = null
 

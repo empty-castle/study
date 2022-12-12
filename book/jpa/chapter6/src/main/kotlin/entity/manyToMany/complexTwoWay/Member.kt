@@ -1,4 +1,4 @@
-package entity.manyToMany.extendTwoWay
+package entity.manyToMany.complexTwoWay
 
 import javax.persistence.*
 

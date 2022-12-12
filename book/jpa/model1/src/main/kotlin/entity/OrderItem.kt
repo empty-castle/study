@@ -19,7 +19,7 @@ class OrderItem {
 
     @ManyToOne
     @JoinColumn(name = "ITEM_ID")
-    val item: Item? = null
+    var item: Item? = null
 
     @ManyToOne
     @JoinColumn(name = "ORDER_ID")
