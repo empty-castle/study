@@ -2,12 +2,7 @@
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
     <persistence-unit name="jpabook">
 
-        <class>entity.join.Item</class>
-        <class>entity.Order</class>
-        <class>entity.OrderItem</class>
-        <class>entity.Delivery</class>
-        <class>entity.Member</class>
-        <class>entity.Category</class>
+        <class>entity.compositeKey.idClass.Parent</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
@@ -15,7 +10,6 @@
             <property name="javax.persistence.jdbc.password" value="emptyCASTLE13"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@forwork_high?TNS_ADMIN=C:/.repo/Wallet_forWORK"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
-            <property name="hibernate.default_schema" value="EMPTYCASTLE"/>
             <!-- 스키마 자동 생성 -->
             <property name="hibernate.hbm2ddl.auto" value="create"/>
             <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"/>
