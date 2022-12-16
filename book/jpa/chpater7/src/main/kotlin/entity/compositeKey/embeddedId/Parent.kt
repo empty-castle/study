@@ -7,7 +7,7 @@ import javax.persistence.Entity
 open class Parent {
 
     @EmbeddedId
-    var id: ParentId? = null
+    open var id: ParentId? = null
 
-    var name: String? = null
+    open var name: String? = null
 }
