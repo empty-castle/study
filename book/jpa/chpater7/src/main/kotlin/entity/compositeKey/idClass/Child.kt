@@ -1,13 +1,11 @@
 package entity.compositeKey.idClass
 
-import javax.persistence.Entity
-import javax.persistence.JoinColumn
-import javax.persistence.JoinColumns
-import javax.persistence.ManyToOne
+import javax.persistence.*
 
 @Entity
-class Child {
+open class Child {
 
+    @Id
     var id: String? = null
 
     @ManyToOne
