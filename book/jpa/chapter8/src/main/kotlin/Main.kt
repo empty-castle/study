@@ -1,5 +1,5 @@
-import entity.proxy.Member
-import entity.proxy.Team
+import entity.proxy.eager.Member
+import entity.proxy.eager.Team
 import javax.persistence.EntityManagerFactory
 import javax.persistence.Persistence
 

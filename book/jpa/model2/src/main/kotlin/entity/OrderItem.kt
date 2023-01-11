@@ -1,13 +1,7 @@
 package entity
 
 import entity.item.Item
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
-import javax.persistence.JoinColumn
-import javax.persistence.ManyToOne
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 @Table(name = "ORDER_ITEM")
@@ -18,11 +12,11 @@ class OrderItem: BaseEntity() {
     @Column(name = "ORDER_ITEM_ID")
     var id: Long? = null
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ITEM_ID")
     var item: Item? = null
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ORDER_ID")
     var order: Order? = null
 

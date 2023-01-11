@@ -2,7 +2,11 @@
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
     <persistence-unit name="jpabook">
 
-        <!--<class>entity.compositeKey.idClass.Parent</class>-->
+        <!--<class>entity.proxy.eager.Member</class>-->
+        <!--<class>entity.proxy.eager.Team</class>-->
+
+        <class>entity.proxy.lazy.Member</class>
+        <class>entity.proxy.lazy.Team</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>

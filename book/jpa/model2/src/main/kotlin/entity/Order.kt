@@ -13,7 +13,7 @@ open class Order: BaseEntity() {
     @Column(name = "ORDER_ID")
     var id: Long? = null
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "MEMBER_ID")
     var member: Member? = null
         set(value) {
@@ -24,10 +24,10 @@ open class Order: BaseEntity() {
             field?.orders?.add(this)
         }
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = [CascadeType.ALL])
     var orderItems: MutableList<OrderItem> = mutableListOf()
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
     @JoinColumn(name = "DELIVERY_ID")
     var delivery: Delivery? = null
         set(value) {

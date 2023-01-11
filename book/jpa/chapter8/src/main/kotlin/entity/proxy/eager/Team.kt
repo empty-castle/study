@@ -1,4 +1,4 @@
-package entity.proxy
+package entity.proxy.eager
 
 import javax.persistence.Column
 import javax.persistence.Entity

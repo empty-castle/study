@@ -1,21 +1,17 @@
-package entity.proxy
+package entity.proxy.lazy
 
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
-import javax.persistence.ManyToOne
 
 @Entity
-open class Member {
+open class Team {
 
     @Id
     @GeneratedValue
-    @Column(name = "MEMBER_ID")
+    @Column(name = "TEAM_ID")
     var id: Long? = null
 
-    var username: String? = null
-
-    @ManyToOne
-    var team: Team? = null
+    var name: String? = null
 }
