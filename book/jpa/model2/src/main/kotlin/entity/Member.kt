@@ -1,6 +1,8 @@
 package entity
 
 import javax.persistence.Column
+import javax.persistence.Embeddable
+import javax.persistence.Embedded
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
@@ -16,11 +18,8 @@ class Member: BaseEntity() {
 
     var name: String? = null
 
-    var city: String? = null
-
-    var street: String? = null
-
-    var zipcode: String? = null
+    @Embedded
+    var address: Address? = null
 
     @OneToMany(mappedBy = "member")
     var orders: MutableList<Order> = mutableListOf()
