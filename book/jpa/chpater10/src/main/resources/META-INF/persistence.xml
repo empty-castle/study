@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+    <persistence-unit name="jpabook">
+
+        <class>entity.Member</class>
+        <class>entity.Order</class>
+        <class>entity.Product</class>
+        <class>entity.Team</class>
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <!-- 스키마 자동 생성 -->
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"/>
+            <!-- 실행되는 SQL 보여줌 -->
+            <property name="hibernate.show_sql" value="true"/>
+            <!-- SQL 을 이쁘게 보여줌 -->
+            <property name="format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
