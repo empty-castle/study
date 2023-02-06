@@ -10,10 +10,6 @@ type GreetingsProps = {
 function Greetings({name, mark, optional, onClick}: GreetingsProps) {
   const handleClick = () => onClick(name)
 
-  // ref, reactive
-
-  // 양방향이 안되요 !!
-
   return (
     <div>
       Hello, {name} {mark}

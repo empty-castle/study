@@ -4,6 +4,9 @@ import './App.css';
 import Greetings from "./Greetings";
 import Counter from "./Counter";
 import MyForm from "./MyForm";
+import ReducerSample from "./ReducerSample";
+import {SampleProvider} from "./SampleContext";
+import ReducerSample2 from "./ReducerSample2";
 
 function App() {
   const onClick = (name: string) => {
@@ -19,6 +22,12 @@ function App() {
       <Greetings onClick={onClick} name={'React'} />
       <Counter />
       <MyForm onSubmit={onSubmit} />
+
+      <ReducerSample />
+
+      <SampleProvider>
+        <ReducerSample2 />
+      </SampleProvider>
 
       {/*<header className="App-header">*/}
       {/*  <img src={logo} className="App-logo" alt="logo" />*/}
