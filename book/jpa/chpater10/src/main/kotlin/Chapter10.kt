@@ -46,11 +46,18 @@ fun main(args: Array<String>) {
     //        em.createQuery("select count(m), sum(m.age), avg(m.age), max(m.age), min(m.age) from Member m").resultList
 
     /* group */
-    val resultList =
-        em.createQuery("select count(m), sum(m.age), avg(m.age), max(m.age), min(m.age) from Member m left join m.team t group by t.name having avg(m.age) > 10").resultList
+//    val resultList =
+//        em.createQuery("select count(m), sum(m.age), avg(m.age), max(m.age), min(m.age) from Member m left join m.team t group by t.name having avg(m.age) > 10").resultList
+//    resultList.forEach { println(it.username) }
 
+    // JPQL 조인
+    val teamName = "팀A"
+    val query = "SELECT m FROM Member m INNER JOIN m.team t WHERE t.name = :teamName"
 
-    resultList.forEach { println(it.username) }
+    val members = em.createQuery(query, Member::class.java)
+        .setParameter("teamName", teamName)
+        .resultList
+    members.forEach { println(it.username) }
 
     em.close()
     emf.close()
