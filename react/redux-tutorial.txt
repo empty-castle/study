@@ -6,3 +6,5 @@ https://medium.com/@jsh901220/react%EC%97%90-redux-%EC%A0%81%EC%9A%A9%ED%95%98%E
 redux
 
 duck pattern
+
+https://nomadcoders.co/react-for-beginners/lectures/3257
