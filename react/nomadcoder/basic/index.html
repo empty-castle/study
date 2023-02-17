@@ -12,68 +12,25 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
   const root = document.getElementById('root')
-  const MinutesToHours = () => {
-    const [amount, setAmount] = React.useState(0)
-    const [inverted, setInverted] = React.useState(false)
-    const onChange = (event) => {
-      setAmount(event.target.value)
-    }
-    const reset = () => setAmount(0)
-    const onInvert = () => {
-      reset()
-      setInverted((current) => !current)
-    }
+  function Btn({text, big}) {
     return (
-      <div>
-        <div>
-          <label>Minutes
-            <input
-              value={inverted ? amount * 60 : amount}
-              placeholder="Minutes"
-              type="number"
-              onChange={onChange}
-              disabled={inverted}
-            />
-          </label>
-        </div>
-        <div>
-          <label>Hours
-            <input
-              value={inverted ? amount : Math.round(amount / 60)}
-              placeholder="Hours"
-              type="number"
-              disabled={!inverted}
-              onChange={onChange}
-            />
-          </label>
-        </div>
-        <button onClick={reset}>Reset</button>
-        <button onClick={onInvert}>{inverted ? "Turn back" : "Invert"}</button>
-      </div>
+      <button style={{
+        backgroundColor: "tomato",
+        color: "white",
+        padding: "10px 20px",
+        border: 0,
+        borderRadius: 10,
+        fontSize: big ? 18 : 16
+      }}>
+        {text}
+      </button>
     )
   }
-  const KmToMiles = () => {
-    return (
-      <h3>KM 2 M</h3>
-    )
-  }
-  const App = () => {
-    const [index, setIndex] = React.useState("0")
-    const onSelect = (event) => {
-      setIndex(event.target.value)
-    }
+  function App() {
     return (
       <div>
-        <h1>Super Converter</h1>
-        <label>Switch
-          <select value={index} onChange={onSelect}>
-            <option value="0">Minutes & Hours</option>
-            <option value="1">Km & Miles</option>
-          </select>
-        </label>
-        <hr/>
-        {index === "0" ? <MinutesToHours /> : null}
-        {index === "1" ? <KmToMiles /> : null}
+        <Btn text={'Save Changes'} big={true}/>
+        <Btn text={'Continue'} big={false}/>
       </div>
     )
   }
