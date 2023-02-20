@@ -7,4 +7,4 @@ redux
 
 duck pattern
 
-https://nomadcoders.co/react-for-beginners/lectures/3257
+https://nomadcoders.co/react-hooks-introduction/lectures/1589
