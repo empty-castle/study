@@ -1,21 +1,13 @@
-import {useEffect, useState} from 'react';
-
-const useTitle = initialTitle => {
-  const [title, setTitle] = useState(initialTitle);
-  const updateTitle = () => {
-    const htmlTitle = document.querySelector('title');
-    htmlTitle.innerText = title;
-  };
-  useEffect(updateTitle, [title]);
-  return setTitle;
-};
+import useAxios from './hooks/useAxios';
 
 function App() {
-  const titleUpdater = useTitle('Loading...');
-  setTimeout(() => titleUpdater("Home"), 3000)
+  const {loading, data, error, refetch} = useAxios({url: "https://api.coinpaprika.com/v1/tickers"})
+  console.log(`Loading: ${loading}\nError: ${error}\nData: ${JSON.stringify(data)}`)
   return (
     <div className="App">
-
+      <h1>hello</h1>
+      <h2>{loading && "Loading"}</h2>
+      <button onClick={refetch}>Refetch</button>
     </div>
   );
 }
