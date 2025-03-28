@@ -16,7 +16,7 @@
 	- User settings file: settings.xml 설정, 로컬 레포지토리 주소 참조용
 	- Local repository: 라이브러리 모아둔 폴더 설정
 4. (옵션) 오래된 프로젝트, Maven 관리가 제대로 안 되어 있는 프로젝트
-  1. File > Project Structure
+	1. File > Project Structure
 	2. Libraries에 누락된 라이브러리 수동 추가
 	3. 추가한 라이브러리 Modules에 추가되었는지 확인
 5. (욥션) Spring 프로젝트인 경우, 톰캣을 사용하는 경우
