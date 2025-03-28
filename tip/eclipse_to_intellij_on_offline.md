@@ -15,15 +15,16 @@
 3. 설정
 	- User settings file: settings.xml 설정, 로컬 레포지토리 주소 참조용
 	- Local repository: 라이브러리 모아둔 폴더 설정
-4. (옵션) 오래된 프로젝트, Maven 관리가 제대로 안 되어 있는 프로젝트
+4. File > New > Module from Existing Sources로 pom.xml 선택하여 추가
+5. (옵션) 오래된 프로젝트, Maven 관리가 제대로 안 되어 있는 프로젝트
 	1. File > Project Structure
 	2. Libraries에 누락된 라이브러리 수동 추가
 	3. 추가한 라이브러리 Modules에 추가되었는지 확인
-5. (욥션) Spring 프로젝트인 경우, 톰캣을 사용하는 경우
+6. (욥션) Spring 프로젝트인 경우, 톰캣을 사용하는 경우
 	1. 톰캣 실행 시 Artidacts 추가가 필요(File > Project Structure)
 	2. :war의 Ourput Layout 탭에서 하단 Show content of elements 켜서 폴더 구조 확인
 	3. WEB-INF/lib 아래에 라이브러리 전부 들어가야 함
-6. 빌드 후 실행 확인
+7. 빌드 후 실행 확인
 
 
 ## gradle
